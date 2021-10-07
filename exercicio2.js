@@ -29,10 +29,10 @@ const voters = [
     { name: 'Zack', age: 19, voted: false },
 ];
 
-function voterResults(arr) {
-    const voters = arr;
+function voterResults(array) {
+    const voters = array;
 
-    const Results = voters.reduce(
+    const results = voters.reduce(
         (prev, curr) => {
             return {
                 numYoungVotes:
@@ -54,7 +54,7 @@ function voterResults(arr) {
         }
     );
 
-    return Results;
+    return results;
 }
 
 console.log(voterResults(voters));
