@@ -10,11 +10,19 @@ let calculatorModule = () => {
     let entries = [];
 
     const enter = (data) => {
-        entries = [...entries, data];
-        return data;
+        if (typeof data === 'number' || data === ('+' || '-' || '*' || '/')) {
+            entries = [...entries, data];
+            return data;
+        } else {
+            return 'Invalid entry!';
+        }
     };
 
     const equals = () => {
+        if (entries.length < 3) {
+            return 'Not enough entries!';
+        }
+
         const firstNumber = entries[entries.length - 3];
         const operator = entries[entries.length - 2];
         const secondNumber = entries[entries.length - 1];
@@ -54,17 +62,18 @@ let calculatorModule = () => {
 };
 
 let calculadora = calculatorModule();
-console.log(calculadora.enter(5));
-console.log(calculadora.enter('+'));
-console.log(calculadora.enter(2));
-console.log(calculadora.equals());
-console.log(calculadora.list());
 
-console.log(calculadora.enter(10));
-console.log(calculadora.enter('/'));
-console.log(calculadora.enter(7));
-console.log(calculadora.equals());
-console.log(calculadora.list());
+// console.log(calculadora.enter(5));
+// console.log(calculadora.enter('+'));
+// console.log(calculadora.enter(2));
+// console.log(calculadora.equals());
+// console.log(calculadora.list());
 
-console.log(calculadora.reset());
-console.log(calculadora.list());
+// console.log(calculadora.enter(10));
+// console.log(calculadora.enter('/'));
+// console.log(calculadora.enter(7));
+// console.log(calculadora.equals());
+// console.log(calculadora.list());
+
+// console.log(calculadora.reset());
+// console.log(calculadora.list());
