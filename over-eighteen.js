@@ -18,12 +18,12 @@ const people = [
     { name: 'Bob Ziroll', age: 100 },
 ];
 
-function makeStrings(array) {
+const makeStrings = (array) => {
     const whoCanWatchTheMatrix = array.map((person) =>
         person.age > 18 ? `${person.name} can go to The Matrix` : `${person.name} is under age!!`
     );
 
     return whoCanWatchTheMatrix;
-}
+};
 
 console.log(makeStrings(people));

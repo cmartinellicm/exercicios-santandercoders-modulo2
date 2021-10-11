@@ -29,19 +29,25 @@ const voters = [
     { name: 'Zack', age: 19, voted: false },
 ];
 
-function voterResults(array) {
+function election(array) {
     const voters = array;
 
     const results = voters.reduce(
-        (prev, curr) => {
+        (acc, curr) => {
+            const ageGroup = (age) => {
+                if (age >= 18 && age <= 25) return 'young';
+                if (age >= 26 && age <= 35) return 'mid';
+                if (age >= 36 && age <= 55) return 'old';
+                return 'Invalid age';
+            };
+
             return {
-                numYoungVotes:
-                    curr.age >= 18 && curr.age <= 25 && curr.voted ? prev.numYoungVotes + 1 : prev.numYoungVotes,
-                numYoungPeople: curr.age >= 18 && curr.age <= 25 ? prev.numYoungPeople + 1 : prev.numYoungPeople,
-                numMidVotes: curr.age >= 26 && curr.age <= 35 && curr.voted ? prev.numMidVotes + 1 : prev.numMidVotes,
-                numMidPeople: curr.age >= 26 && curr.age <= 35 ? prev.numMidPeople + 1 : prev.numMidPeople,
-                numOldVotes: curr.age >= 36 && curr.age <= 55 && curr.voted ? prev.numOldVotes + 1 : prev.numOldVotes,
-                numOldPeople: curr.age >= 36 && curr.age <= 55 ? prev.numOldPeople + 1 : prev.numOldPeople,
+                numYoungVotes: ageGroup(curr.age) === 'young' && curr.voted ? acc.numYoungVotes + 1 : acc.numYoungVotes,
+                numYoungPeople: ageGroup(curr.age) === 'young' ? acc.numYoungPeople + 1 : acc.numYoungPeople,
+                numMidVotes: ageGroup(curr.age) === 'mid' && curr.voted ? acc.numMidVotes + 1 : acc.numMidVotes,
+                numMidPeople: ageGroup(curr.age) === 'mid' ? acc.numMidPeople + 1 : acc.numMidPeople,
+                numOldVotes: ageGroup(curr.age) === 'old' && curr.voted ? acc.numOldVotes + 1 : acc.numOldVotes,
+                numOldPeople: ageGroup(curr.age) === 'old' ? acc.numOldPeople + 1 : acc.numOldPeople,
             };
         },
         {
@@ -57,4 +63,4 @@ function voterResults(array) {
     return results;
 }
 
-console.log(voterResults(voters));
+console.log(election(voters));
