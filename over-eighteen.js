@@ -1,15 +1,3 @@
-// EXERCICIO 5
-// Faça uma série de strings dos nomes dizendo se eles podem ou não ir para The Matrix (> 18 anos)
-
-// Retorno esperado:
-// [
-//     'Angelina Jolie can go to The Matrix',
-//     'Eric Jones is under age!!',
-//     'Paris Hilton is under age!!',
-//     'Kayne West is under age!!',
-//     'Bob Ziroll can go to The Matrix',
-// ]
-
 const people = [
     { name: 'Angelina Jolie', age: 80 },
     { name: 'Eric Jones', age: 2 },

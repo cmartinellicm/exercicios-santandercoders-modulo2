@@ -1,11 +1,3 @@
-// Módulo calculadora
-// - Função "enter"
-// - Função "equals"
-// - Função "list" que mostra todas as operações já executadas na calculadora, seguidas de seus resultados
-// - Função "reset"
-
-// Controlar os operadores e entradas de valor
-
 let calculator = (() => {
     const sum = (firstNumber, secondNumber) => firstNumber + secondNumber;
     const subtract = (firstNumber, secondNumber) => firstNumber - secondNumber;

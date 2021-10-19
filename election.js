@@ -1,19 +1,3 @@
-// EXERCICIO 6
-// Dada uma série de eleitores em potencial, retorna um objeto que represente os resultados da votação.
-// Inclua quantos eleitores potenciais tinham entre 18 e 25 AnalyserNode, quantos eram de 26 a 35, quantos
-// de 36 a 55 anos e quantos de cada uma dessas faixas etárias realmente votaram. O objeto resultante
-// contendo esses dados deve ter 6 propriedades.
-
-// Retorno esperado:
-// {
-//     numYoungVotes: 1,
-//     numYoungPeople: 4,
-//     numMidVotes: 3,
-//     numMidPeople: 4,
-//     numOldVotes: 3,
-//     numOldPeople: 4
-// }
-
 const voters = [
     { name: 'Bob', age: 30, voted: true },
     { name: 'Jake', age: 32, voted: true },
